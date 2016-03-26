@@ -1,0 +1,27 @@
+
+	<!-- <li ng-repeat="person in contacts"><a ng-href="#/pacientes/{{person.id}}">{{person.name}}</a></li>
+</ul> -->
+
+<h3>Lista de Pacientes</h3>
+<table class="striped">
+  <thead>
+    <tr>
+          <th data-field="Nombre"> Nombre Paciente </th>
+					<th data-field="Nutriologa"> Nutriologa</th>
+          <th data-field="Edad">Edad</th>
+          <th data-field="Peso">Peso </th>
+			    <th data-field="Consulta"> Consultar</th>
+				  <th data-field="Expediente"> Expediente</th>
+					<th data-field="Eliminar"> Eliminar</th>
+		</tr>
+  </thead>
+				<tr ng-repeat="person in contacts">
+				<td>		<a ng-href="#/pacientes/consulta/{{person.id}}">{{person.name}}</a></td>
+				<td> Ana Cristina</td>
+        <td>21</td>
+        <td>{{person.peso}}</td>
+				<td><a ng-href="#/pacientes/consulta/{{person.id}}"><button type="button" class="btn btn-primary">Consultar</button> </a></td>
+				<td><a ng-href="#/pacientes/expediente/{{person.id}}"><button type="button" class="btn btn-primary">Expediente</button></a></td>
+				<td><a ng-href="#/pacientes/lista">Eliminar</a></td>
+				</tr>
+		</table>

@@ -1,18 +1,188 @@
-<div class="row">
-       <div class="input-field col s12" >
-        <input ng-model="person.name"  type="text" class="validate">
-        <label class="active">Nombre:</label>
-       </div>
+<form class="col s12">
 
-       <div class="input-field col s6" >
-        <input ng-model="person.name"  type="text" class="validate">
-        <label class="active">Nombre:</label>
-       </div>
-
-       <div class="input-field col s6" >
-        <input ng-model="person.name"  type="text" class="validate">
-        <label class="active">Nombre:</label>
-       </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="first_name" type="text" ng-model="person.name" class="validate" required>
+      <label class="active" for="first_name">Nombre Completo</label>
+    </div>
 
 
-<div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <input id="apodo" type="text"  ng-model="apodo" class="validate"  required>
+      <label for="last_name">Le gustan que le digan:</label>
+
+    </div>
+
+
+
+    <div class="input-field col s6">
+      <input id="fechaNac" type="text" ng-model="fnacimiento" class="validate"  required>
+      <label for="first_name">Fecha de Nacimiento yyyy-mm-dd</label>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="input-field col s6">
+      <input id="generoF" type="radio" ng-model="genero" ng-value="0" class="with-gap">
+      <label for="generoF">Femenino</label>
+      <input id="generoM" type="radio" ng-model="genero" ng-value="1" class="with-gap" >
+      <label for="generoM"> Masculino</label>
+    </div>
+
+    <div class="input-field col s6">
+      <input id="ocupacion" type="text" ng-model="ocupacion" class=" validate"  required>
+      <label for="ocupacion">Ocupación</label>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <input id="email" type="email"  ng-model="email" class="validate"  required>
+      <label for="f">Email</label>
+    </div>
+
+  <div class="input-field col s6">
+      <input id="tel" type="text"  ng-model="tel" class="validate"  required>
+      <label for="tel">Teléfono</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <input id="email" type="text"  ng-model="estatura" class="validate"  required>
+      <label for="estatura">Estatura</label>
+    </div>
+
+  <div class="input-field col s6">
+      <input id="tel" type="text"  ng-model="peso" class="validate"  required>
+      <label for="peso">Peso</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <input id="email" type="text"  ng-model="pesoId" class="validate"  required>
+      <label for="pesoId">Peso Ideal</label>
+    </div>
+
+  <div class="input-field col s6">
+      <input id="tel" type="text"  ng-model="pesoMet"class="validate"  required>
+      <label for="pesoMet">Peso Meta</label>
+    </div>
+  </div>
+
+  <div class="row">
+
+
+   <div class="input-field col s4">
+
+       <label>Ejercio Físico</label>
+       <br>
+
+      <input id="si" type="radio" name="fisicoCheck" class="with-gap" ng-model="ejFisico" ng-value="0">
+      <label for="si">Si</label>
+      <input id="no" type="radio" name="FisicoCheck" class="with-gap" ng-model="ejFisico" ng-value="1">
+      <label for="no"> No</label>
+
+
+
+    </div>
+
+      <div class="input-field col s8">
+        <input id="email" type="text"  ng-model="tipoEjercicio" class="validate"  required>
+        <label>Tipo de Ejercicio</label>
+      </div>
+
+  </div>
+
+
+
+  <div class="row">
+      <div class="input-field col s6">
+        <input id="email" type="text"  ng-model="numComida" class="validate"  required>
+        <label for="numComida">Comidas al día</label>
+      </div>
+
+      <div class="input-field col s6">
+          <input  type="text"  ng-model="frComida" class="validate"  required>
+          <label >Frecuencia de comidas fuera de casa</label>
+        </div>
+
+
+  </div>
+
+  <div class="row">
+               <div class="input-field col s6">
+          <input id="tel" type="text"  ng-model="alimentoSi"class="validate"  required>
+          <label>Alimentos que prefiere</label>
+        </div>
+
+               <div class="input-field col s6">
+          <input  type="text"  ng-model="alimentoNo"class="validate"  required>
+          <label>Alimentos que disgustan</label>
+        </div>
+  </div>
+
+        <div class="row">
+                     <div class="input-field col s6">
+                <input  type="text"  ng-model="veritest" class="validate"  required>
+                <label for="hrFisica">Veritest</label>
+                  </div>
+
+           <div class="input-field col s6">
+                  <input  type="text"  ng-model="bioquimicos" class="validate"  required>
+                            <label for="hrFisica">Bioquimicos</label>
+                          </div>
+
+            </div>
+
+
+
+                                <div class="row">
+                                             <div class="input-field col s12">
+                                        <input  type="text"  ng-model="prescripcionEjercicio" class="validate"  required>
+                                        <label for="hrFisica">Prescripción de Ejercicio</label>
+                                      </div>
+
+
+  <div class="row">
+               <div class="input-field col s6">
+          <input  type="text"  ng-model="suplemento"class="validate"  required>
+          <label for="hrFisica">Suplementos </label>
+        </div>
+
+               <div class="input-field col s6">
+          <input id="tel" type="text"  ng-model="medicamentoActual"class="validate"  required>
+          <label for="hrFisica">Medicamentos actuales</label>
+        </div>
+  </div>
+
+
+
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea  class="materialize-textarea" ng-model="antecedente"  required></textarea>
+          <label for="ante">Antecedentes</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea  class="materialize-textarea" ng-model="tratamiento"  required></textarea>
+          <label for="tratamiento">Tratamiento</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea  class="materialize-textarea" ng-model="observaciones"  required></textarea>
+          <label for="obser">Observaciones</label>
+        </div>
+      </div>
+
+
+</form>

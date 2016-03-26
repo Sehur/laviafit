@@ -5,7 +5,7 @@ myapp.config(function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.when("/", "/pacientes/lista");
 
   // For any unmatched url, send to /route1
-  $urlRouterProvider.otherwise("/contacts/list");
+  $urlRouterProvider.otherwise("/pacientes/lista");
 
   $stateProvider
     .state('pacientes', {
@@ -52,4 +52,18 @@ myapp.config(function($stateProvider, $urlRouterProvider){
           console.log("enter contacts.detail");
         }
     })
+    .state('pacientes.registro', {
+        url: '/registro',
+        // loaded into ui-view of parent's template
+        templateUrl: 'contacts.registro.html',
+        controller: function($scope, $stateParams){
+          $scope.hola="hola";
+        },
+        onEnter: function(){
+          console.log("enter contacts.detail");
+        }
+    })
+
+
+
 })

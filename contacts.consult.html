@@ -1,3 +1,131 @@
-<h3>Consulta</h3>
 
-<h3>{{person.name}}</h3>
+
+<div class=" col m10"><h5>{{person.name}}</h5></div>
+
+<div class=" col m2 "><a ng-href="#/pacientes/lista"><center><button class="btn pink lighten-3">Regresar</button></center></a></div>
+
+
+
+
+    <table align="center" class="table table-bordered table-striped ">
+ <thead>
+    <input type="text"  placeholder="Consultas a mostrar" ng-model="quantity" >
+    <tr>
+       <th> Fecha </th>
+        <th> Grasa </th>
+        <th> Peso </th>
+        <th> Calorimetria </th>
+        <th>Triscep</th>
+        <th>Biscep</th>
+        <th>Abdominal</th>
+        <th>Suprailaco</th>
+        <th>Musculo</th>
+        <th>Cintura</th>
+        <th>Cadera</th>
+        <th> Dieta </th>
+
+     </tr>
+ </thead>
+  <tbody>
+   <tr ng-repeat="c in consultas | orderBy:sortType | limitTo:quantity">
+      <td >{{c.fecha}}</td>
+      <td >{{c.grasa}}</td>
+      <td>{{c.peso}}</td>
+      <td>{{c.calorimetria}}</td>
+      <td >{{c.triscep}}</td>
+      <td >{{c.biscep}}</td>
+      <td>{{c.abdominal}}</td>
+      <td>{{c.suprailiaco}}</td>
+      <td >{{c.musculo}}</td>
+      <td >{{c.cintura}}</td>
+      <td>{{c.cadera}}</td>
+      <td>{{c.dieta}}</td>
+
+
+     </tr>
+   </tbody>
+  </table>
+
+
+<br>
+<br>
+
+
+
+
+
+      <form class="col s12 ">
+        <h5> Registrar nueva consulta </h5>
+
+
+        <div class="row">
+
+          <div class="input-field col s2">
+            <input  type="text" ng-model="peso" >
+            <label >Peso</label>
+          </div>
+
+
+          <div class="input-field col s2">
+            <input type="text" ng-model="grasa" >
+            <label >Porcentaje de Grasa</label>
+           </div>
+
+           <div class="input-field col s2">
+             <input type="text" ng-model="calorimetria" >
+             <label>Calorimetria</label>
+            </div>
+
+            <div class="input-field col s2">
+              <input type="text" ng-model="triscep" >
+              <label>Triscep</label>
+             </div>
+             <div class="input-field col s2">
+               <input type="text" ng-model="biscep" >
+               <label>Biscep</label>
+              </div>
+
+              <div class="input-field col s2">
+                <input type="text" ng-model="abdominal" >
+                <label>Abdominal</label>
+               </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s2">
+            <input type="text" ng-model="suprailiaco" >
+            <label>Suprailaco</label>
+           </div>
+
+           <div class="input-field col s2">
+             <input type="text" ng-model="musculo" >
+             <label>Musculo</label>
+            </div>
+
+            <div class="input-field col s2">
+              <input type="text" ng-model="cintura" >
+              <label>Cintura</label>
+             </div>
+
+             <div class="input-field col s2">
+               <input type="text" ng-model="cadera" >
+               <label>Cadera</label>
+              </div>
+
+              <div class="input-field col s4">
+                <input type="text" ng-model="dieta" >
+                <label>Dieta</label>
+               </div>
+        </div>
+
+
+
+  <div class="row ">
+
+
+    <center><button class="btn waves-effect waves-light pink lighten-3" ng-click="enviar()" > Registrar Consulta</button></center>
+
+ </div>
+
+
+    </form>

@@ -2,7 +2,7 @@
 <html ng-app="myapp">
 
 <head>
-    <title>AngularJS: UI-Router Abstract State Example</title>
+    <title>Nutrisym</title>
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="materialize/css/style.css" />
 
@@ -13,7 +13,17 @@
 </head>
 
 <body class="container">
-  <p><i>Best viewed in pop-out mode to see location changes. Click blue button on the right.</i></p>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#/pacientes.lista" class="brand-logo">La Via Fit </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Nutrisym</a></li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <br>
 
 
 
@@ -22,6 +32,23 @@
       <div ui-view></div>
     </div>
   </div>
+<br>
+<br>
+<br>
+  <footer class="page-footer">
+
+           <div class="footer-copyright">
+             <div class="container">
+            2016 Contacto: sergio.hurtado@udem.edu
+             <a class="grey-text text-lighten-4 right" href="#!">Nutrisym</a>
+             </div>
+           </div>
+         </footer>
+
+
+
+
+
 
   <!-- Angular -->
   <script src="angular.js"></script>
@@ -32,6 +59,7 @@
 
   <!-- App Script -->
   <script src="myScript.js"></script>
+  <script src="controladores.js"></script>
 
 </body>
 

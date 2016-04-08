@@ -1,8 +1,16 @@
 <form class="col s12">
-
+  <div class="col s6"><h3>Expediente</h3></div>
+  <div class="col s3"><button type="button" class="btn btn-primary blue bajar" ng-click="modificar()">Guardar</button></div>
+  <div class="col s3 bajar"><a ng-href="#/pacientes/lista"><button type="button" class="btn btn-primary">Regresar</button></a></div>
+  <style>
+.bajar{
+  margin-top:25px;
+}
+  </style>
+  <br><br>
   <div class="row">
     <div class="input-field col s12">
-      <input id="first_name" type="text" ng-model="person.name" class="validate" required>
+      <input id="first_name" type="text" ng-model="person.nombre" class="validate" required>
       <label class="active" for="first_name">Nombre Completo</label>
     </div>
 
@@ -11,68 +19,68 @@
 
   <div class="row">
     <div class="input-field col s6">
-      <input id="apodo" type="text"  ng-model="apodo" class="validate"  required>
-      <label for="last_name">Le gustan que le digan:</label>
+      <input id="apodo" type="text"  ng-model="person.apodo" class="validate"  required>
+      <label class="active">Le gustan que le digan:</label>
 
     </div>
 
 
 
     <div class="input-field col s6">
-      <input id="fechaNac" type="text" ng-model="fnacimiento" class="validate"  required>
-      <label for="first_name">Fecha de Nacimiento yyyy-mm-dd</label>
+      <input id="fechaNac" type="text" ng-model="person.fechaNacimiento" class="validate"  required>
+      <label class="active">Fecha de Nacimiento yyyy-mm-dd</label>
     </div>
   </div>
 
 
   <div class="row">
     <div class="input-field col s6">
-      <input id="generoF" type="radio" ng-model="genero" ng-value="0" class="with-gap">
+      <input id="generoF" type="radio" ng-model="person.sexo" ng-value="0" class="with-gap">
       <label for="generoF">Femenino</label>
-      <input id="generoM" type="radio" ng-model="genero" ng-value="1" class="with-gap" >
+      <input id="generoM" type="radio" ng-model="person.sexo" ng-value="1" class="with-gap" >
       <label for="generoM"> Masculino</label>
     </div>
 
     <div class="input-field col s6">
-      <input id="ocupacion" type="text" ng-model="ocupacion" class=" validate"  required>
-      <label for="ocupacion">Ocupación</label>
+      <input id="ocupacion" type="text" ng-model="person.ocupacion" class=" validate"  required>
+      <label class="active">Ocupación</label>
     </div>
 
   </div>
 
   <div class="row">
     <div class="input-field col s6">
-      <input id="email" type="email"  ng-model="email" class="validate"  required>
-      <label for="f">Email</label>
+      <input id="email" type="email"  ng-model="person.email" class="validate"  required>
+      <label class="active">Email</label>
     </div>
 
   <div class="input-field col s6">
-      <input id="tel" type="text"  ng-model="tel" class="validate"  required>
-      <label for="tel">Teléfono</label>
+      <input id="tel" type="text"  ng-model="person.telefono" class="validate"  required>
+      <label class="active">Teléfono</label>
     </div>
   </div>
 
   <div class="row">
     <div class="input-field col s6">
-      <input id="email" type="text"  ng-model="estatura" class="validate"  required>
-      <label for="estatura">Estatura</label>
+      <input id="email" type="text"  ng-model="person.estatura" class="validate"  required>
+      <label class="active">Estatura</label>
     </div>
 
   <div class="input-field col s6">
-      <input id="tel" type="text"  ng-model="peso" class="validate"  required>
-      <label for="peso">Peso</label>
+      <input id="tel" type="text"  ng-model="person.peso" class="validate"  required>
+      <label class="active">Peso</label>
     </div>
   </div>
 
   <div class="row">
     <div class="input-field col s6">
-      <input id="email" type="text"  ng-model="pesoId" class="validate"  required>
-      <label for="pesoId">Peso Ideal</label>
+      <input id="email" type="text"  ng-model="person.pesoIdeal" class="validate"  required>
+      <label class="active">Peso Ideal</label>
     </div>
 
   <div class="input-field col s6">
-      <input id="tel" type="text"  ng-model="pesoMet"class="validate"  required>
-      <label for="pesoMet">Peso Meta</label>
+      <input id="tel" type="text"  ng-model="person.pesoMeta"class="validate"  required>
+      <label class="active">Peso Meta</label>
     </div>
   </div>
 
@@ -80,22 +88,16 @@
 
 
    <div class="input-field col s4">
-
-       <label>Ejercio Físico</label>
-       <br>
-
-      <input id="si" type="radio" name="fisicoCheck" class="with-gap" ng-model="ejFisico" ng-value="0">
-      <label for="si">Si</label>
-      <input id="no" type="radio" name="FisicoCheck" class="with-gap" ng-model="ejFisico" ng-value="1">
-      <label for="no"> No</label>
+     <input type="text" ng-model="person.ejercicioFisico" class="validate"  required>
+     <label class="active">Ejercicio Fisico (Si/no)</label>
 
 
 
     </div>
 
       <div class="input-field col s8">
-        <input id="email" type="text"  ng-model="tipoEjercicio" class="validate"  required>
-        <label>Tipo de Ejercicio</label>
+        <input id="email" type="text"  ng-model="person.tipoEjercicio" class="validate"  required>
+        <label class="active">Tipo de Ejercicio</label>
       </div>
 
   </div>
@@ -104,13 +106,13 @@
 
   <div class="row">
       <div class="input-field col s6">
-        <input id="email" type="text"  ng-model="numComida" class="validate"  required>
-        <label for="numComida">Comidas al día</label>
+        <input id="email" type="text"  ng-model="person.comidasDia" class="validate"  required>
+        <label class="active">Comidas al día</label>
       </div>
 
       <div class="input-field col s6">
-          <input  type="text"  ng-model="frComida" class="validate"  required>
-          <label >Frecuencia de comidas fuera de casa</label>
+          <input  type="text"  ng-model="person.frecuencia" class="validate"  required>
+          <label class="active" >Frecuencia de comidas fuera de casa</label>
         </div>
 
 
@@ -118,25 +120,25 @@
 
   <div class="row">
                <div class="input-field col s6">
-          <input id="tel" type="text"  ng-model="alimentoSi"class="validate"  required>
-          <label>Alimentos que prefiere</label>
+          <input id="tel" type="text"  ng-model="person.alimentosSi"class="validate"  required>
+          <label class="active">Alimentos que prefiere</label>
         </div>
 
                <div class="input-field col s6">
-          <input  type="text"  ng-model="alimentoNo"class="validate"  required>
-          <label>Alimentos que disgustan</label>
+          <input  type="text"  ng-model="person.alimentosNo"class="validate"  required>
+          <label class="active">Alimentos que disgustan</label>
         </div>
   </div>
 
         <div class="row">
                      <div class="input-field col s6">
-                <input  type="text"  ng-model="veritest" class="validate"  required>
-                <label for="hrFisica">Veritest</label>
+                <input  type="text"  ng-model="person.veritest" class="validate"  required>
+                <label class="active">Veritest</label>
                   </div>
 
            <div class="input-field col s6">
-                  <input  type="text"  ng-model="bioquimicos" class="validate"  required>
-                            <label for="hrFisica">Bioquimicos</label>
+                  <input  type="text"  ng-model="person.bioquimicos" class="validate"  required>
+                            <label class="active">Bioquimicos</label>
                           </div>
 
             </div>
@@ -145,20 +147,21 @@
 
                                 <div class="row">
                                              <div class="input-field col s12">
-                                        <input  type="text"  ng-model="prescripcionEjercicio" class="validate"  required>
-                                        <label for="hrFisica">Prescripción de Ejercicio</label>
+                                        <input  type="text"  ng-model="person.prescripcionEjercicio" class="validate"  required>
+                                        <label class="active">Prescripción de Ejercicio</label>
                                       </div>
+                                    </div>
 
 
   <div class="row">
                <div class="input-field col s6">
-          <input  type="text"  ng-model="suplemento"class="validate"  required>
-          <label for="hrFisica">Suplementos </label>
+          <input  type="text"  ng-model="person.suplementos"class="validate"  required>
+          <label class="active">Suplementos </label>
         </div>
 
                <div class="input-field col s6">
-          <input id="tel" type="text"  ng-model="medicamentoActual"class="validate"  required>
-          <label for="hrFisica">Medicamentos actuales</label>
+          <input id="tel" type="text"  ng-model="person.medicamentos"class="validate"  required>
+          <label class="active">Medicamentos actuales</label>
         </div>
   </div>
 
@@ -166,21 +169,21 @@
 
       <div class="row">
         <div class="input-field col s12">
-          <textarea  class="materialize-textarea" ng-model="antecedente"  required></textarea>
-          <label for="ante">Antecedentes</label>
+          <textarea  class="materialize-textarea" ng-model="person.antecedentes"  required></textarea>
+          <label class="active">Antecedentes</label>
         </div>
       </div>
 
       <div class="row">
         <div class="input-field col s12">
-          <textarea  class="materialize-textarea" ng-model="tratamiento"  required></textarea>
-          <label for="tratamiento">Tratamiento</label>
+          <textarea  class="materialize-textarea" ng-model="person.tratamiento"  required></textarea>
+          <label class="active">Tratamiento</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <textarea  class="materialize-textarea" ng-model="observaciones"  required></textarea>
-          <label for="obser">Observaciones</label>
+          <textarea  class="materialize-textarea" ng-model="person.observaciones"  required></textarea>
+          <label class="active">Observaciones</label>
         </div>
       </div>
 

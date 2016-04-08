@@ -1,12 +1,12 @@
 
 <div class="row">
 
-  <div class="col-md-1"></div>
 
-  <div class="col-md-10">
-    <br><br><br>
+
+
+
     <form class="col s12">
-
+<h5>Registrar Paciente</h5>
       <div class="row">
         <div class="input-field col s12">
           <input id="first_name" type="text" ng-model="nombre" class="validate" required>
@@ -86,19 +86,17 @@
       <div class="row">
 
 
-       <div class="input-field col s4">
 
-           <label>Ejercio Físico</label>
-           <br>
 
-          <input id="si" type="radio" name="fisicoCheck" class="with-gap" ng-model="ejFisico" ng-value="0">
-          <label for="si">Si</label>
-          <input id="no" type="radio" name="FisicoCheck" class="with-gap" ng-model="ejFisico" ng-value="1">
-          <label for="no"> No</label>
+         <div class="input-field col s4">
+           <input type="text" ng-model="ejFisico" class="validate"  required>
+           <label>Ejercicio Fisico (Si/no)</label>
 
 
 
-        </div>
+          </div>
+
+
 
           <div class="input-field col s8">
             <input id="email" type="text"  ng-model="tipoEjercicio" class="validate"  required>
@@ -156,6 +154,8 @@
                                             <label for="hrFisica">Prescripción de Ejercicio</label>
                                           </div>
 
+                                        </div>
+
 
       <div class="row">
                    <div class="input-field col s6">
@@ -193,12 +193,8 @@
 
 
     </form>
-  <div class="col-md-1"></div>
+<div class="col s8"></div>
+<div class="col s4"><button type="button" class="btn btn-primary" ng-click="enviar()">Registrar</button> </div>
 
 
  </div>
- </div>
-
-
-
-</div>

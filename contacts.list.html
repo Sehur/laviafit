@@ -2,9 +2,17 @@
 	<!-- <li ng-repeat="person in contacts"><a ng-href="#/pacientes/{{person.id}}">{{person.name}}</a></li>
 </ul> -->
 
-<h3>Lista de Pacientes</h3>
+<div class="col s10"><h3>Lista de Pacientes</h3></div>
+<div class="col s2 bajar"><a ng-href="#/pacientes/registro"><button type="button" class="btn btn-primary pink lighten-3">Registrar</button> </a></td></div>
+<style>.bajar{
+  margin-top: 15px;
+  }
+  </style>
 <table class="striped">
+   <input type="text"  placeholder="Buscar" ng-model="search.$" >
   <thead>
+
+
     <tr>
           <th data-field="Nombre"> Nombre Paciente </th>
 					<th data-field="Nutriologa"> Nutriologa</th>
@@ -13,15 +21,17 @@
 			    <th data-field="Consulta"> Consultar</th>
 				  <th data-field="Expediente"> Expediente</th>
 					<th data-field="Eliminar"> Eliminar</th>
+
 		</tr>
   </thead>
-				<tr ng-repeat="person in contacts">
-				<td>		<a ng-href="#/pacientes/consulta/{{person.id}}">{{person.name}}</a></td>
-				<td> Ana Cristina</td>
-        <td>21</td>
+				<tr ng-repeat="person in contacts | orderBy:sortType | filter:search ">
+				<td>		<a ng-href="#/pacientes/consulta/{{person.idPaciente}}">{{person.nombre}}</a></td>
+				<td> {{person.nutri}}</td>
+        <td>{{person.edad}}</td>
         <td>{{person.peso}}</td>
-				<td><a ng-href="#/pacientes/consulta/{{person.id}}"><button type="button" class="btn btn-primary">Consultar</button> </a></td>
-				<td><a ng-href="#/pacientes/expediente/{{person.id}}"><button type="button" class="btn btn-primary">Expediente</button></a></td>
-				<td><a ng-href="#/pacientes/lista">Eliminar</a></td>
+				<td><a ng-href="#/pacientes/consulta/{{person.idPaciente}}"><button type="button" class="btn btn-primary pink lighten-3">Consultar</button> </a></td>
+				<td><a ng-href="#/pacientes/expediente/{{person.idPaciente}}"><button type="button" class="btn btn-primary pink lighten-3">Expediente</button></a></td>
+				<td><button type="button" class="btn btn-primary red lighten-1" ng-click="eliminar(person.idPaciente)">Eliminar</button></td>
+
 				</tr>
 		</table>
